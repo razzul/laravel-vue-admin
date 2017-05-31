@@ -1,0 +1,4 @@
+	// __module_name__ //
+	Route::resource(config('LaravelVueAdmin.adminRoute') . '/__db_table_name__', 'LaravelVueAdmin\__controller_class_name__');
+	Route::get(config('LaravelVueAdmin.adminRoute') . '/__singular_var___dt_ajax', 'LaravelVueAdmin\__controller_class_name__@dtajax');
+});
