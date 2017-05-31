@@ -1,0 +1,41 @@
+{
+    "name": "razzul/laravelVueAdmin",
+    "description": "Laravel admin pannel using Vue.js",
+    "keywords": ["laravel", "Vue.js", "Vue", "admin", "Backend"],
+    "homepage": "https://github.com/razzul/laravel-vue-admin",
+    "support": {
+        "issues": "https://github.com/razzul/laravel-vue-admin/issues",
+        "source": "https://github.com/razzul/laravel-vue-admin"
+    },
+    "version": "1.0.0",
+    "require": {
+        "illuminate/support": "5.*",
+        "illuminate/container": "5.*",
+        "laravelcollective/html": "5.*",
+        "yajra/laravel-datatables-oracle": "^7.0",
+        "creativeorange/gravatar": "^1.0",
+        "doctrine/dbal": "2.*",
+        "zizaco/entrust": "5.*",
+        "spatie/laravel-backup": "^3.0.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rajul Mondal",
+            "email": "developer.rajul@gmail.com",
+            "homepage": "https://github.com/razzul",
+            "role": "Developer"
+        }
+    ],
+    "classmap": [
+        "src/Controllers",
+        "src/Models"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Razzul\\LaravelVueAdmin\\": "src/"
+        },
+        "files": [
+        ]
+    }
+}
