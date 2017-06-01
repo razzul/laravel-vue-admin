@@ -167,13 +167,13 @@ class LaravelVueAdminServiceProvider extends ServiceProvider
         |--------------------------------------------------------------------------
          */
 
-        /*$commands = [
+        $commands = [
             \Razzul\LaravelVueAdmin\Commands\Migration::class,
             \Razzul\LaravelVueAdmin\Commands\Crud::class,
             \Razzul\LaravelVueAdmin\Commands\Packaging::class,
             \Razzul\LaravelVueAdmin\Commands\LvInstall::class,
         ];
 
-        $this->commands($commands);*/
+        $this->commands($commands);
     }
 }

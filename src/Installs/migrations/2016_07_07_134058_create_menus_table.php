@@ -17,7 +17,7 @@ class CreateMenusTable extends Migration
      */
     public function up()
     {
-        Schema::create('la_menus', function (Blueprint $table) {
+        Schema::create('lv_menus', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 50);
             $table->string('url', 256);
@@ -36,8 +36,8 @@ class CreateMenusTable extends Migration
      */
     public function down()
     {
-        if (Schema::hasTable('la_menus')) {
-            Schema::drop('la_menus');
+        if (Schema::hasTable('lv_menus')) {
+            Schema::drop('lv_menus');
         }
     }
 }

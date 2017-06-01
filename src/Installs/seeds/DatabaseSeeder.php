@@ -82,74 +82,74 @@ class DatabaseSeeder extends Seeder
 		
 		// Generate LaravelVueAdmin Default Configurations
 		
-		$laconfig = new LvConfigs;
-		$laconfig->key = "sitename";
-		$laconfig->value = "LaravelVueAdmin 1.0.0";
-		$laconfig->save();
+		$lvconfig = new LvConfigs;
+		$lvconfig->key = "sitename";
+		$lvconfig->value = "LaravelVueAdmin 1.0.0";
+		$lvconfig->save();
 
-		$laconfig = new LvConfigs;
-		$laconfig->key = "sitename_part1";
-		$laconfig->value = "Laravel";
-		$laconfig->save();
+		$lvconfig = new LvConfigs;
+		$lvconfig->key = "sitename_part1";
+		$lvconfig->value = "Laravel";
+		$lvconfig->save();
 		
-		$laconfig = new LvConfigs;
-		$laconfig->key = "sitename_part2";
-		$laconfig->value = "VueAdmin 1.0.0";
-		$laconfig->save();
+		$lvconfig = new LvConfigs;
+		$lvconfig->key = "sitename_part2";
+		$lvconfig->value = "VueAdmin 1.0.0";
+		$lvconfig->save();
 		
-		$laconfig = new LvConfigs;
-		$laconfig->key = "sitename_short";
-		$laconfig->value = "Lv";
-		$laconfig->save();
+		$lvconfig = new LvConfigs;
+		$lvconfig->key = "sitename_short";
+		$lvconfig->value = "Lv";
+		$lvconfig->save();
 
-		$laconfig = new LvConfigs;
-		$laconfig->key = "site_description";
-		$laconfig->value = "LaravelVueAdmin is a open-source Laravel Admin Panel for quick-start Admin based applications and boilerplate for CRM or CMS systems.";
-		$laconfig->save();
+		$lvconfig = new LvConfigs;
+		$lvconfig->key = "site_description";
+		$lvconfig->value = "LaravelVueAdmin is a open-source Laravel Admin Panel for quick-start Admin based applications and boilerplate for CRM or CMS systems.";
+		$lvconfig->save();
 
 		// Display Configurations
 		
-		$laconfig = new LvConfigs;
-		$laconfig->key = "sidebar_search";
-		$laconfig->value = "1";
-		$laconfig->save();
+		$lvconfig = new LvConfigs;
+		$lvconfig->key = "sidebar_search";
+		$lvconfig->value = "1";
+		$lvconfig->save();
 		
-		$laconfig = new LvConfigs;
-		$laconfig->key = "show_messages";
-		$laconfig->value = "1";
-		$laconfig->save();
+		$lvconfig = new LvConfigs;
+		$lvconfig->key = "show_messages";
+		$lvconfig->value = "1";
+		$lvconfig->save();
 		
-		$laconfig = new LvConfigs;
-		$laconfig->key = "show_notifications";
-		$laconfig->value = "1";
-		$laconfig->save();
+		$lvconfig = new LvConfigs;
+		$lvconfig->key = "show_notifications";
+		$lvconfig->value = "1";
+		$lvconfig->save();
 		
-		$laconfig = new LvConfigs;
-		$laconfig->key = "show_tasks";
-		$laconfig->value = "1";
-		$laconfig->save();
+		$lvconfig = new LvConfigs;
+		$lvconfig->key = "show_tasks";
+		$lvconfig->value = "1";
+		$lvconfig->save();
 		
-		$laconfig = new LvConfigs;
-		$laconfig->key = "show_rightsidebar";
-		$laconfig->value = "1";
-		$laconfig->save();
+		$lvconfig = new LvConfigs;
+		$lvconfig->key = "show_rightsidebar";
+		$lvconfig->value = "1";
+		$lvconfig->save();
 		
-		$laconfig = new LvConfigs;
-		$laconfig->key = "skin";
-		$laconfig->value = "skin-white";
-		$laconfig->save();
+		$lvconfig = new LvConfigs;
+		$lvconfig->key = "skin";
+		$lvconfig->value = "skin-white";
+		$lvconfig->save();
 		
-		$laconfig = new LvConfigs;
-		$laconfig->key = "layout";
-		$laconfig->value = "fixed";
-		$laconfig->save();
+		$lvconfig = new LvConfigs;
+		$lvconfig->key = "layout";
+		$lvconfig->value = "fixed";
+		$lvconfig->save();
 
 		// Admin Configurations
 
-		$laconfig = new LvConfigs;
-		$laconfig->key = "default_email";
-		$laconfig->value = "developer.rajul@gmail.com";
-		$laconfig->save();
+		$lvconfig = new LvConfigs;
+		$lvconfig->key = "default_email";
+		$lvconfig->value = "developer.rajul@gmail.com";
+		$lvconfig->save();
 		
 		$modules = Module::all();
 		foreach ($modules as $module) {

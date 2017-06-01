@@ -335,7 +335,7 @@ class LvHelper
 	// LvHelper::laravel_ver()
 	public static function laravel_ver() {
 		$var = \App::VERSION();
-		
+		return 5.3;
 		if(starts_with($var, "5.2")) {
 			return 5.2;
 		} else if(starts_with($var, "5.3")) {

@@ -18,6 +18,7 @@ use Razzul\LaravelVueAdmin\Models\Module;
 use Razzul\LaravelVueAdmin\Models\ModuleFields;
 
 use Razzul\LaravelVueAdmin\Helpers\LvHelper;
+use Razzul\LaravelVueAdmin\Models\LvConfigs;
 
 use App\User;
 use App\Models\Employee;
@@ -327,7 +328,7 @@ class EmployeesController extends Controller
 		if(env('MAIL_USERNAME') != null && env('MAIL_USERNAME') != "null" && env('MAIL_USERNAME') != "") {
 			// Send mail to User his new Password
 			Mail::send('emails.send_login_cred_change', ['user' => $user, 'password' => $request->password], function ($m) use ($user) {
-				$m->from(LAConfigs::getByKey('default_email'), LAConfigs::getByKey('sitename'));
+				$m->from(LvConfigs::getByKey('default_email'), LvConfigs::getByKey('sitename'));
 				$m->to($user->email, $user->name)->subject('LaravelVueAdmin - Login Credentials chnaged');
 			});
 		} else {

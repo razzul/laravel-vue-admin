@@ -9,7 +9,7 @@ namespace Razzul\LaravelVueAdmin\Commands;
 use Exception;
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
-use Razzul\LaravelVueAdmin\Helpers\LAHelper;
+use Razzul\LaravelVueAdmin\Helpers\LvHelper;
 use Eloquent;
 use DB;
 
@@ -55,11 +55,11 @@ class LvInstall extends Command
 				$this->line("DB Assistant Initiated....");
 				$db_data = array();
 				
-				if(LAHelper::laravel_ver() == 5.3) {
+				if(LvHelper::laravel_ver() == 5.3) {
 					$db_data['host'] = $this->ask('Database Host', '127.0.0.1');
 					$db_data['port'] = $this->ask('Database Port', '3306');
 				}
-				$db_data['db'] = $this->ask('Database Name', 'LaravelVueAdmin');
+				$db_data['db'] = $this->ask('Database Name', 'laravelvueadmin');
 				$db_data['dbuser'] = $this->ask('Database User', 'root');
 				$dbpass = $this->ask('Database Password', false);
 
@@ -71,28 +71,28 @@ class LvInstall extends Command
 
 				$default_db_conn = env('DB_CONNECTION', 'mysql');
 				
-				if(LAHelper::laravel_ver() == 5.3) {
+				if(LvHelper::laravel_ver() == 5.3) {
 					config(['database.connections.'.$default_db_conn.'.host' => $db_data['host']]);
 					config(['database.connections.'.$default_db_conn.'.port' => $db_data['port']]);
-					LAHelper::setenv("DB_HOST", $db_data['host']);
-					LAHelper::setenv("DB_PORT", $db_data['port']);
+					LvHelper::setenv("DB_HOST", $db_data['host']);
+					LvHelper::setenv("DB_PORT", $db_data['port']);
 				}
 				
 				config(['database.connections.'.$default_db_conn.'.database' => $db_data['db']]);
 				config(['database.connections.'.$default_db_conn.'.username' => $db_data['dbuser']]);
 				config(['database.connections.'.$default_db_conn.'.password' => $db_data['dbpass']]);
-				LAHelper::setenv("DB_DATABASE", $db_data['db']);
-				LAHelper::setenv("DB_USERNAME", $db_data['dbuser']);
-				LAHelper::setenv("DB_PASSWORD", $db_data['dbpass']);
+				LvHelper::setenv("DB_DATABASE", $db_data['db']);
+				LvHelper::setenv("DB_USERNAME", $db_data['dbuser']);
+				LvHelper::setenv("DB_PASSWORD", $db_data['dbpass']);
 			}
 			
 			if(env('CACHE_DRIVER') != "array") {
 				config(['cache.default' => 'array']);
-				LAHelper::setenv("CACHE_DRIVER", "array");
+				LvHelper::setenv("CACHE_DRIVER", "array");
 			}
 			
 			if ($this->confirm("This process may change/append to the following of your existing project files:"
-					."\n\n\t app/Http/routes.php"
+					."\n\n\t routes/web.php"
 					."\n\t app/User.php"
 					."\n\t database/migrations/2014_10_12_000000_create_users_table.php"
 					."\n\t gulpfile.js"
@@ -101,7 +101,7 @@ class LvInstall extends Command
 				// Controllers
 				$this->line("\n".'Generating Controllers...');
 				$this->copyFolder($from."/app/Controllers/Auth", $to."/app/Http/Controllers/Auth");
-				if(LAHelper::laravel_ver() == 5.3) {
+				if(LvHelper::laravel_ver() == 5.3) {
 					// Delete Redundant Controllers
 					unlink($to."/app/Http/Controllers/Auth/PasswordController.php");
 					unlink($to."/app/Http/Controllers/Auth/AuthController.php");
@@ -111,8 +111,8 @@ class LvInstall extends Command
 					unlink($to."/app/Http/Controllers/Auth/RegisterController.php");
 					unlink($to."/app/Http/Controllers/Auth/ResetPasswordController.php");
 				}
-				$this->replaceFolder($from."/app/Controllers/LA", $to."/app/Http/Controllers/LA");
-				if(LAHelper::laravel_ver() == 5.3) {
+				$this->replaceFolder($from."/app/Controllers/LaravelVueAdmin", $to."/app/Http/Controllers/LaravelVueAdmin");
+				if(LvHelper::laravel_ver() == 5.3) {
 					$this->copyFile($from."/app/Controllers/Controller.5.3.php", $to."/app/Http/Controllers/Controller.php");
 				} else {
 					$this->copyFile($from."/app/Controllers/Controller.php", $to."/app/Http/Controllers/Controller.php");
@@ -120,7 +120,7 @@ class LvInstall extends Command
 				$this->copyFile($from."/app/Controllers/HomeController.php", $to."/app/Http/Controllers/HomeController.php");
 
 				// Middleware
-				if(LAHelper::laravel_ver() == 5.3) {
+				if(LvHelper::laravel_ver() == 5.3) {
 					$this->copyFile($from."/app/Middleware/RedirectIfAuthenticated.php", $to."/app/Http/Middleware/RedirectIfAuthenticated.php");
 				}
 				
@@ -137,7 +137,7 @@ class LvInstall extends Command
 				}
 				foreach($this->modelsInstalled as $model) {
 					if($model == "User") {
-						if(LAHelper::laravel_ver() == 5.3) {
+						if(LvHelper::laravel_ver() == 5.3) {
 							$this->copyFile($from."/app/Models/".$model."5.3.php", $to."/app/".$model.".php");
 						} else {
 							$this->copyFile($from."/app/Models/".$model.".php", $to."/app/".$model.".php");
@@ -154,10 +154,10 @@ class LvInstall extends Command
 				$this->line("\nDefault admin url route is /admin");
 				if ($this->confirm('Would you like to customize this url ?', false)) {
 					$custom_admin_route = $this->ask('Custom admin route:', 'admin');
-					$laconfigfile =  $this->openFile($to."/config/LaravelVueAdmin.php");
+					$lvconfigfile =  $this->openFile($to."/config/LaravelVueAdmin.php");
 					$arline = LvHelper::getLineWithString($to."/config/LaravelVueAdmin.php", "'adminRoute' => 'admin',");
-					$laconfigfile = str_replace($arline, "    'adminRoute' => '" . $custom_admin_route . "',", $laconfigfile);
-					file_put_contents($to."/config/LaravelVueAdmin.php", $laconfigfile);
+					$lvconfigfile = str_replace($arline, "    'adminRoute' => '" . $custom_admin_route . "',", $lvconfigfile);
+					file_put_contents($to."/config/LaravelVueAdmin.php", $lvconfigfile);
 					config(['LaravelVueAdmin.adminRoute' => $custom_admin_route]);
 				}
 				*/
@@ -230,37 +230,37 @@ class LvInstall extends Command
 				$this->call('vendor:publish', ['--provider' => 'Spatie\Backup\BackupServiceProvider']);
 
 				// Edit config/database.php for Spatie Backup Configuration
-				if(LAHelper::getLineWithString('config/database.php', "dump_command_path") == -1) {
+				if(LvHelper::getLineWithString('config/database.php', "dump_command_path") == -1) {
 					$newDBConfig = "            'driver' => 'mysql',\n"
 						."            'dump_command_path' => '/opt/lampp/bin', // only the path, so without 'mysqldump' or 'pg_dump'\n"
 						."            'dump_command_timeout' => 60 * 5, // 5 minute timeout\n"
 						."            'dump_using_single_transaction' => true, // perform dump using a single transaction\n";
 					
 					$envfile =  $this->openFile('config/database.php');
-					$mysqldriverline = LAHelper::getLineWithString('config/database.php', "'driver' => 'mysql'");
+					$mysqldriverline = LvHelper::getLineWithString('config/database.php', "'driver' => 'mysql'");
 					$envfile = str_replace($mysqldriverline, $newDBConfig, $envfile);
 					file_put_contents('config/database.php', $envfile);
 				}
 				
 				// Routes
 				$this->line('Appending routes...');
-				//if(!$this->fileContains($to."/app/Http/routes.php", "laraadmin.adminRoute")) {
-				if(LAHelper::laravel_ver() == 5.3) {
-					if(LAHelper::getLineWithString($to."/routes/web.php", "require __DIR__.'/admin_routes.php';") == -1) {
+				//if(!$this->fileContains($to."/routes/web.php", "laraadmin.adminRoute")) {
+				if(LvHelper::laravel_ver() == 5.3) {
+					if(LvHelper::getLineWithString($to."/routes/web.php", "require __DIR__.'/admin_routes.php';") == -1) {
 						$this->appendFile($from."/app/routes.php", $to."/routes/web.php");
 					}
 					$this->copyFile($from."/app/admin_routes.php", $to."/routes/admin_routes.php");
 				} else {
-					if(LAHelper::getLineWithString($to."/app/Http/routes.php", "require __DIR__.'/admin_routes.php';") == -1) {
-						$this->appendFile($from."/app/routes.php", $to."/app/Http/routes.php");
+					if(LvHelper::getLineWithString($to."/routes/web.php", "require __DIR__.'/admin_routes.php';") == -1) {
+						$this->appendFile($from."/app/routes.php", $to."/routes/web.php");
 					}
-					$this->copyFile($from."/app/admin_routes.php", $to."/app/Http/admin_routes.php");
+					$this->copyFile($from."/app/admin_routes.php", $to."/routes/admin_routes.php");
 				}
 				
 				// tests
 				$this->line('Generating tests...');
 				$this->copyFolder($from."/tests", $to."/tests");
-				if(LAHelper::laravel_ver() == 5.3) {
+				if(LvHelper::laravel_ver() == 5.3) {
 					unlink($to.'/tests/TestCase.php');
 					rename($to.'/tests/TestCase5.3.php', $to.'/tests/TestCase.php');
 				} else {
@@ -270,7 +270,7 @@ class LvInstall extends Command
 				// Utilities 
 				$this->line('Generating Utilities...');
 				// if(!$this->fileContains($to."/gulpfile.js", "admin-lte/AdminLTE.less")) {
-				if(LAHelper::getLineWithString($to."/gulpfile.js", "mix.less('admin-lte/AdminLTE.less', 'public/la-assets/css');") == -1) {
+				if(LvHelper::getLineWithString($to."/gulpfile.js", "mix.less('admin-lte/AdminLTE.less', 'public/la-assets/css');") == -1) {
 					$this->appendFile($from."/gulpfile.js", $to."/gulpfile.js");
 				}
 				// Creating Super Admin User
@@ -283,7 +283,7 @@ class LvInstall extends Command
 					$data = array();
 					$data['name']     = $this->ask('Super Admin name', 'Super Admin');
 					$data['email']    = $this->ask('Super Admin email', 'user@example.com');
-					$data['password'] = bcrypt($this->secret('123456'));
+					$data['password'] = bcrypt($this->secret('Super Admin password'));
 					$data['context_id']  = "1";
 					$data['type']  = "Employee";
 					$user = \App\User::create($data);
@@ -323,10 +323,10 @@ class LvInstall extends Command
 		} catch (Exception $e) {
 			$msg = $e->getMessage();
 			if (strpos($msg, 'SQLSTATE') !== false) {
-				throw new Exception("LAInstall: Database is not connected. Connect database (.env) and run 'la:install' again.\n".$msg, 1);
+				throw new Exception("LvInstall: Database is not connected. Connect database (.env) and run 'la:install' again.\n".$msg, 1);
 			} else {
-				$this->error("LAInstall::handle exception: ".$e);
-				throw new Exception("LAInstall::handle Unable to install : ".$msg, 1);
+				$this->error("LvInstall::handle exception: ".$e);
+				throw new Exception("LvInstall::handle Unable to install : ".$msg, 1);
 			}
 		}
 	}
@@ -343,15 +343,15 @@ class LvInstall extends Command
 	
 	private function copyFolder($from, $to) {
 		// $this->info("copyFolder: ($from, $to)");
-		LAHelper::recurse_copy($from, $to);
+		LvHelper::recurse_copy($from, $to);
 	}
 	
 	private function replaceFolder($from, $to) {
 		// $this->info("replaceFolder: ($from, $to)");
 		if(file_exists($to)) {
-			LAHelper::recurse_delete($to);
+			LvHelper::recurse_delete($to);
 		}
-		LAHelper::recurse_copy($from, $to);
+		LvHelper::recurse_copy($from, $to);
 	}
 	
 	private function copyFile($from, $to) {

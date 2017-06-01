@@ -2289,7 +2289,7 @@ body.IE7 .Switch.Round {
   background: #ddd;
 }
 /**
- * DWIJ Customizations
+ * LaravelVueAdmin Customizations
  */
 #menu-nestable button[data-action=collapse] {
   display: none;
@@ -4689,7 +4689,7 @@ table.text-center th {
 .post .user-block {
   margin-bottom: 15px;
 }
-/* ---- new Profile By DWIJ ---- */
+/* ---- new Profile By LaravelVueAdmin ---- */
 .box.profile {
   display: table;
   table-layout: fixed;

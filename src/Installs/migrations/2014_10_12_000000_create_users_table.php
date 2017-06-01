@@ -7,7 +7,7 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use Dwij\Laraadmin\Models\Module;
+use Razzul\LaravelVueAdmin\Models\Module;
 
 class CreateUsersTable extends Migration
 {
@@ -57,7 +57,7 @@ class CreateUsersTable extends Migration
             ["genre",       "Genre",        "Taginput", false, ["Fantacy","Adventure"], 0, 0, false],
             ["description", "Description",  "Textarea", false, "",          0,  1000,   false],
             ["short_intro", "Introduction", "TextField",false, "",          5,  250,    true],
-            ["website",     "Website",      "URL",      false, "http://dwij.in", 0, 0,  false],
+            ["website",     "Website",      "URL",      false, "http://LaravelVueAdmin.in", 0, 0,  false],
         ]);
 		*/
     }

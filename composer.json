@@ -33,7 +33,8 @@
     ],
     "autoload": {
         "psr-4": {
-            "Razzul\\LaravelVueAdmin\\": "src/"
+            "App\\": "app/",
+            "Razzul\\LaravelVueAdmin\\": "packages/Razzul/LaravelVueAdmin/src/"
         },
         "files": [
         ]
