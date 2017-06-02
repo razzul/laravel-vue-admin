@@ -46,4 +46,5 @@ You need to remove this trait from app/Http/Controllers/Controller.php<br>
 'charset' => 'utf8',
 'collation' => 'utf8_unicode_ci',
 ```
-> *STEP 7:* php atrisan lv:install && follow onscreen instructions<br>
+> *STEP 7:* move gulpfile.js from _packages/Razzul/LaravelVueAdmin_ to the root folder <br>
+> *STEP 8:* php atrisan lv:install && follow onscreen instructions<br>
