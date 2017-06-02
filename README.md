@@ -1,13 +1,13 @@
 # laravel-vue-admin
 Laravel admin pannel using Vue.js
 
-> *STEP 1:* composer require laravel-vue-admin <br>
+> *STEP 1:* composer require laravel-vue-admin or clone the package from https://github.com/razzul/laravel-vue-admin to packages/Razzul and rename laravel-vue-admin to LaravelVueAdmin<br>
 > *STEP 2:* update main composer file <br>
 
 ```json
 "classmap": [
-    "src/Controllers",
-    "src/Models"
+    "packages/Razzul/LaravelVueAdmin/src/Controllers",
+    "packages/Razzul/LaravelVueAdmin/src/Models"
 ],
 "autoload": {
     "psr-4": {
