@@ -20,7 +20,7 @@
 		</ul>
 	</div>
 @endif
-<form action="{{route(config('LaravelVueAdmin.adminRoute').'.lv_configs.store')}}" method="POST">
+<form action="{{route(config('LaravelVueAdmin.adminRoute').'.configs.store')}}" method="POST">
 	<!-- general form elements disabled -->
 	<div class="box box-warning">
 		<div class="box-header with-border">

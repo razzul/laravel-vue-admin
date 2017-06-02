@@ -4,7 +4,7 @@
  * Help: http://LaravelVueAdmin.com
  */
 
-namespace App\Http\Controllers\LA;
+namespace App\Http\Controllers\LaravelVueAdmin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests;

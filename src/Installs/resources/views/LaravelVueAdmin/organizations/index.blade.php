@@ -7,9 +7,9 @@
 @section("htmlheader_title", "Organizations Listing")
 
 @section("headerElems")
-@la_access("Organizations", "create")
+@lv_access("Organizations", "create")
 	<button class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#AddModal">Add Organization</button>
-@endla_access
+@endlv_access
 @endsection
 
 @section("main-content")
@@ -45,7 +45,7 @@
 	</div>
 </div>
 
-@la_access("Organizations", "create")
+@lv_access("Organizations", "create")
 <div class="modal fade" id="AddModal" role="dialog" aria-labelledby="myModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
@@ -53,7 +53,7 @@
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="myModalLabel">Add Organization</h4>
 			</div>
-			{!! Form::open(['action' => 'LA\OrganizationsController@store', 'id' => 'organization-add-form']) !!}
+			{!! Form::open(['action' => 'LaravelVueAdmin\OrganizationsController@store', 'id' => 'organization-add-form']) !!}
 			<div class="modal-body">
 				<div class="box-body">
                     @lv_form($module)
@@ -81,7 +81,7 @@
 		</div>
 	</div>
 </div>
-@endla_access
+@endlv_access
 
 @endsection
 

@@ -244,7 +244,7 @@ class LvHelper
 
 	// LvHelper::print_menu_editor($menu)
 	public static function print_menu_editor($menu) {
-		$editing = \Collective\Html\FormFacade::open(['route' => [config('LaravelVueAdmin.adminRoute').'.lv_menus.destroy', $menu->id], 'method' => 'delete', 'style'=>'display:inline']);
+		$editing = \Collective\Html\FormFacade::open(['route' => [config('LaravelVueAdmin.adminRoute').'.menus.destroy', $menu->id], 'method' => 'delete', 'style'=>'display:inline']);
 		$editing .= '<button class="btn btn-xs btn-danger pull-right"><i class="fa fa-times"></i></button>';
 		$editing .= \Collective\Html\FormFacade::close();
 		if($menu->type != "module") {
