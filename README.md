@@ -7,7 +7,7 @@ Laravel admin pannel using Vue.js
 ![alt tag](https://raw.githubusercontent.com/razzul/laravel-vue-admin/master/screenshots/config.png)
 
 > *STEP 1:* Create folder packages/Razzul in the root dir in the laravel application <br>
-> *STEP 1:* Get the package under packages/Razzul and rename laravel-vue-admin to LaravelVueAdmin <br>
+> *STEP 2:* Get the package under packages/Razzul and rename laravel-vue-admin to LaravelVueAdmin <br>
 
 ```
 composer require laravel-vue-admin_
@@ -15,7 +15,7 @@ or
 clone the package from https://github.com/razzul/laravel-vue-admin
 ```
 
-> *STEP 2:* update main composer file <br>
+> *STEP 3:* update main composer file <br>
 
 ```json
 "classmap": [
@@ -32,7 +32,7 @@ clone the package from https://github.com/razzul/laravel-vue-admin
 }
 ```
 
-> *STEP 3:* add require packages <br>
+> *STEP 4:* add require packages <br>
 
 ```bash
 composer require laravelcollective/html
@@ -43,8 +43,8 @@ composer require zizaco/entrust
 composer require spatie/laravel-backup
 ```
 
-> *STEP 4:* composer dump-autoload <br>
-> *STEP 5:* php artisan <br>
+> *STEP 5:* composer dump-autoload <br>
+> *STEP 6:* php artisan <br>
 
 _if you are getting error here like_
 
@@ -53,23 +53,23 @@ trait AuthorizesResources not found
 ```
 You need to remove this trait from app/Http/Controllers/Controller.php<br>
 
-> *STEP 6:* update config/database.php <br>
+> *STEP 7:* update config/database.php <br>
 
 ```
 'mysql' => [
     'charset' => 'utf8',
     'collation' => 'utf8_unicode_ci',
 ```
-> *STEP 7:* move gulpfile.js from _packages/Razzul/LaravelVueAdmin_ to the root folder <br>
-> *STEP 8:* register package in config/app.php<br>
+> *STEP 8:* move gulpfile.js from _packages/Razzul/LaravelVueAdmin_ to the root folder <br>
+> *STEP 9:* register package in config/app.php<br>
 
 ```php
 ...
 Razzul\LaravelVueAdmin\LaravelVueAdminServiceProvider::class,
 ```
-> *STEP 9:* php atrisan lv:install && follow onscreen instructions<br>
+> *STEP 10:* php atrisan lv:install && follow onscreen instructions<br>
 
-> *STEP 10:* update config/database.php <br>
+> *STEP 11:* update config/database.php <br>
 _we need to change this to make backup functional_
 ```
 'mysql' => [
