@@ -9,8 +9,6 @@
     },
     "version": "1.0.0",
     "require": {
-        "illuminate/support": "5.*",
-        "illuminate/container": "5.*",
         "laravelcollective/html": "5.*",
         "yajra/laravel-datatables-oracle": "^7.0",
         "creativeorange/gravatar": "^1.0",
@@ -33,11 +31,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "App\\": "app/",
             "Razzul\\LaravelVueAdmin\\": "src/"
         },
         "files": [
         ]
-    },
-    "minimum-stability": "dev"
+    }
 }
