@@ -72,6 +72,7 @@ $(function () {
 	$("#CreateBackup").on("click", function() {
 		$.ajax({
 			url: "{{ url(config('LaravelVueAdmin.adminRoute') . '/create_backup_ajax') }}",
+			data: {"_token": "{{ csrf_token() }}" },
 			method: 'POST',
 			beforeSend: function() {
 				$("#CreateBackup").html('<i class="fa fa-refresh fa-spin"></i> Creating Backup...');

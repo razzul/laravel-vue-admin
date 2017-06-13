@@ -25,7 +25,7 @@ class BackupsController extends Controller
 	public $show_action = true;
 	public $view_col = 'name';
 	public $listing_cols = ['id', 'name', 'file_name'];
-	public $backup_filepath = "/storage/app/http---localhost/";
+	public $backup_filepath = "storage/app/http---localhost/";
 	
 	public function __construct() {
 		// Field Access of Listing Columns

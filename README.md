@@ -36,9 +36,9 @@ composer require spatie/laravel-backup
 ```
 
 > *STEP 4:* composer dump-autoload <br>
-> *STEP 5:* php atrisan <br>
+> *STEP 5:* php artisan <br>
 
-_if you are getting error here like _
+_if you are getting error here like_
 
 ```
 trait AuthorizesResources not found
@@ -49,10 +49,21 @@ You need to remove this trait from app/Http/Controllers/Controller.php<br>
 
 ```
 'mysql' => [
-    'dump_command_path' => 'c:\xampp\mysql\bin',
     'charset' => 'utf8',
     'collation' => 'utf8_unicode_ci',
 ```
 > *STEP 7:* move gulpfile.js from _packages/Razzul/LaravelVueAdmin_ to the root folder <br>
-> *STEP 8:* php atrisan lv:install && follow onscreen instructions<br>
+> *STEP 8:* register package in config/app.php<br>
 
+```php
+...
+Razzul\LaravelVueAdmin\LaravelVueAdminServiceProvider::class,
+```
+> *STEP 9:* php atrisan lv:install && follow onscreen instructions<br>
+
+> *STEP 10:* update config/database.php <br>
+_we need to change this to make backup functional_
+```
+'mysql' => [
+    'dump_command_path' => 'c:\xampp\mysql\bin',
+```
