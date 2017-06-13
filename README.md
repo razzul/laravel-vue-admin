@@ -1,6 +1,11 @@
 # laravel-vue-admin
 Laravel admin pannel using Vue.js
 
+
+![alt tag](https://raw.githubusercontent.com/razzul/laravel-vue-admin/master/screenshots/dashboard.png)
+![alt tag](https://raw.githubusercontent.com/razzul/laravel-vue-admin/master/screenshots/modules.png)
+![alt tag](https://raw.githubusercontent.com/razzul/laravel-vue-admin/master/screenshots/config.png)
+
 > *STEP 1:* composer require laravel-vue-admin or clone the package from https://github.com/razzul/laravel-vue-admin to packages/Razzul and rename laravel-vue-admin to LaravelVueAdmin<br>
 > *STEP 2:* update main composer file <br>
 
@@ -51,7 +56,3 @@ You need to remove this trait from app/Http/Controllers/Controller.php<br>
 > *STEP 7:* move gulpfile.js from _packages/Razzul/LaravelVueAdmin_ to the root folder <br>
 > *STEP 8:* php atrisan lv:install && follow onscreen instructions<br>
 
-
-![alt tag](https://raw.githubusercontent.com/razzul/laravel-vue-admin/master/screenshots/dashboard.png)
-![alt tag](https://raw.githubusercontent.com/razzul/laravel-vue-admin/master/screenshots/modules.png)
-![alt tag](https://raw.githubusercontent.com/razzul/laravel-vue-admin/master/screenshots/config.png)
