@@ -136,7 +136,7 @@ class DatabaseSeeder extends Seeder
 		
 		$lvconfig = new LvConfigs;
 		$lvconfig->key = "skin";
-		$lvconfig->value = "blue";
+		$lvconfig->value = "midnight-blue";
 		$lvconfig->save();
 		
 		$lvconfig = new LvConfigs;
