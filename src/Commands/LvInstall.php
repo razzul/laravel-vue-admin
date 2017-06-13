@@ -117,7 +117,7 @@ class LvInstall extends Command
 				} else {
 					$this->copyFile($from."/app/Controllers/Controller.php", $to."/app/Http/Controllers/Controller.php");
 				}
-				$this->copyFile($from."/app/Controllers/HomeController.php", $to."/app/Http/Controllers/HomeController.php");
+				//$this->copyFile($from."/app/Controllers/HomeController.php", $to."/app/Http/Controllers/HomeController.php");
 
 				// Middleware
 				if(LvHelper::laravel_ver() == 5.3) {

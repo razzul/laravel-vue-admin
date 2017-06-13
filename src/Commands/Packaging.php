@@ -50,7 +50,7 @@ class Packaging extends Command
         $this->replaceFolder($from."/app/Http/Controllers/Auth", $to."/app/Controllers/Auth");
         $this->replaceFolder($from."/app/Http/Controllers/LaravelVueAdmin", $to."/app/Controllers/LaravelVueAdmin");
         $this->copyFile($from."/app/Http/Controllers/Controller.php", $to."/app/Controllers/Controller.php");
-        $this->copyFile($from."/app/Http/Controllers/HomeController.php", $to."/app/Controllers/HomeController.php");
+        //$this->copyFile($from."/app/Http/Controllers/HomeController.php", $to."/app/Controllers/HomeController.php");
         
         // Models
         $this->line('Exporting Models...');
