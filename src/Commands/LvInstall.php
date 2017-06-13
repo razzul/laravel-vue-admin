@@ -45,7 +45,6 @@ class LvInstall extends Command
 		try {
 			$this->info('LaravelVueAdmin installation started...');
 			
-			$root = base_path('vendor/razzul/laravelvueadmin');
 			$from = base_path('vendor/razzul/laravelvueadmin/src/Installs');
 			$to = base_path();
 			
@@ -118,7 +117,6 @@ class LvInstall extends Command
 				} else {
 					$this->copyFile($from."/app/Controllers/Controller.php", $to."/app/Http/Controllers/Controller.php");
 				}
-				$this->copyFile($root."/gulpfile.js", $to);
 
 				// Middleware
 				if(LvHelper::laravel_ver() == 5.3) {

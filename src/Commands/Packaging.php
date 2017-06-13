@@ -42,7 +42,6 @@ class Packaging extends Command
         
         $from = base_path();
         $to = base_path('vendor/razzul/laravelvueadmin/src/Installs');
-        $root = base_path('vendor/razzul/laravelvueadmin');
         
         $this->info('from: '.$from." to: ".$to);
         
@@ -51,7 +50,6 @@ class Packaging extends Command
         $this->replaceFolder($from."/app/Http/Controllers/Auth", $to."/app/Controllers/Auth");
         $this->replaceFolder($from."/app/Http/Controllers/LaravelVueAdmin", $to."/app/Controllers/LaravelVueAdmin");
         $this->copyFile($from."/app/Http/Controllers/Controller.php", $to."/app/Controllers/Controller.php");
-        $this->copyFile($root."/gulpfile.js", $to);
         
         // Models
         $this->line('Exporting Models...');
