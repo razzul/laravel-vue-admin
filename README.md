@@ -50,3 +50,8 @@ You need to remove this trait from app/Http/Controllers/Controller.php<br>
 ```
 > *STEP 7:* move gulpfile.js from _packages/Razzul/LaravelVueAdmin_ to the root folder <br>
 > *STEP 8:* php atrisan lv:install && follow onscreen instructions<br>
+
+
+![alt tag](https://raw.githubusercontent.com/razzul/laravel-vue-admin/master/screenshots/dashboard.png)
+![alt tag](https://raw.githubusercontent.com/razzul/laravel-vue-admin/master/screenshots/modules.png)
+![alt tag](https://raw.githubusercontent.com/razzul/laravel-vue-admin/master/screenshots/config.png)
