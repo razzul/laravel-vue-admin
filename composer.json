@@ -35,6 +35,5 @@
         },
         "files": [
         ]
-    },
-    "minimum-stability": "dev"
+    }
 }
