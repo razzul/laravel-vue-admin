@@ -45,7 +45,7 @@ class LvInstall extends Command
 		try {
 			$this->info('LaravelVueAdmin installation started...');
 			
-			$from = base_path('packages/Razzul/LaravelVueAdmin/src/Installs');
+			$from = base_path('vendor/razzul/laravelvueadmin/src/Installs');
 			$to = base_path();
 			
 			$this->info('from: '.$from." to: ".$to);
