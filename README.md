@@ -10,7 +10,7 @@ Laravel admin pannel using Vue.js
 > *STEP 2:* Get the package under packages/Razzul and rename laravel-vue-admin to LaravelVueAdmin <br>
 
 ```
-composer require laravel-vue-admin_
+composer require "razzul/laravelvueadmin:1.0.0"
 or
 clone the package from https://github.com/razzul/laravel-vue-admin
 ```
