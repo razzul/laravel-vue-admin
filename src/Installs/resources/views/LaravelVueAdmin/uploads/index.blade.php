@@ -8,7 +8,7 @@
 
 @section("headerElems")
 @lv_access("Uploads", "create")
-	<button id="AddNewUploads" class="btn btn-success btn-sm pull-right">Add New</button>
+    <button id="AddNewUploads" class="btn btn-success btn-sm">Add New</button>
 @endlv_access
 @endsection
 
@@ -30,7 +30,7 @@
     <div class="dz-message"><i class="fa fa-cloud-upload"></i><br>Drop files here to upload</div>
 </form>
 
-<div class="box box-success">
+<div class="box box-info">
 	<!--<div class="box-header"></div>-->
 	<div class="box-body">
 		<ul class="files_container">
@@ -94,7 +94,9 @@
 	</div>
 </div>
 
+@include('LaravelVueAdmin.layouts.partials.file_manager')
 @endsection
+
 
 @push('styles')
 
@@ -124,9 +126,11 @@ $(function () {
     $("#fm_dropzone_main").slideUp();
     $("#AddNewUploads").on("click", function() {
         $("#fm_dropzone_main").slideDown();
+        //$("#AddNewUploads").slideUp();
     });
     $("#closeDZ1").on("click", function() {
         $("#fm_dropzone_main").slideUp();
+        //$("#AddNewUploads").slideDown();
     });
 	@endlv_access
 	

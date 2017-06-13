@@ -16,11 +16,11 @@ use Razzul\LaravelVueAdmin\Models\Module;
 
 @section("main-content")
 
-<div class="box box-success menus">
+<div class="box box-info menus">
 	<!--<div class="box-header"></div>-->
 	<div class="box-body">
 		<div class="row">
-			<div class="col-md-4 col-lg-4">
+			<div class="col-md-3 col-lg-3">
 				<div class="nav-tabs-custom">
 					<ul class="nav nav-tabs">
 						<li class="active"><a href="#tab-modules" data-toggle="tab">Modules</a></li>
@@ -59,7 +59,7 @@ use Razzul\LaravelVueAdmin\Models\Module;
 					</div><!-- /.tab-content -->
 				</div><!-- nav-tabs-custom -->
 			</div>
-			<div class="col-md-8 col-lg-8">
+			<div class="col-md-8 col-lg-8 col-md-offset-1">
 				<div class="dd" id="menu-nestable">
 					<ol class="dd-list">
 						@foreach ($menus as $menu)
@@ -134,6 +134,7 @@ $(function () {
 			},
 			success: function( data ) {
 				// console.log(data);
+				window.location.reload();
 			}
 		});
 	});

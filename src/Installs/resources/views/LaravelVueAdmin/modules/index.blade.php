@@ -11,17 +11,17 @@ use Razzul\LaravelVueAdmin\Models\Module;
 @section("htmlheader_title", "Modules Listing")
 
 @section("headerElems")
-<button class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#AddModal">Add Module</button>
+<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#AddModal">Add Module</button>
 @endsection
 
 @section("main-content")
 
-<div class="box box-success">
+<div class="box box-info">
 	<!--<div class="box-header"></div>-->
 	<div class="box-body">
 		<table id="dt_modules" class="table table-bordered">
 		<thead>
-		<tr class="success">
+		<tr class="info">
 			<th>ID</th>
 			<th>Name</th>
 			<th>Table</th>

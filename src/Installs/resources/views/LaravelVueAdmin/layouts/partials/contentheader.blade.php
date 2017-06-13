@@ -1,5 +1,5 @@
 <!-- Content Header (Page header) -->
-<section class="content-header">
+<div class="content-header">
     <h1>
         @yield('contentheader_title', 'Page Header here')
         <small>@yield('contentheader_description')</small>
@@ -16,4 +16,4 @@
         </ol>
         @endif
     @endif
-</section>
+</div>

@@ -55,6 +55,7 @@
 	</div>
 </div>
 
+@include('LaravelVueAdmin.layouts.partials.file_manager')
 @endsection
 
 @push('scripts')

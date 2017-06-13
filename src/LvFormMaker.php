@@ -238,7 +238,7 @@ class LvFormMaker
 					}
 					if(isset($upload->id)) {
 						$out .= "<a class='btn btn-default btn_upload_file hide' file_type='file' selecter='".$field_name."'>Upload <i class='fa fa-cloud-upload'></i></a>
-							<a class='uploaded_file' target='_blank' href='".url("files/".$upload->hash.DIRECTORY_SEPARATOR.$upload->name)."'><i class='fa fa-file-o'></i><i title='Remove File' class='fa fa-times'></i></a>";
+							<a class='uploaded_file' target='_blank' href='".url("files/".$upload->hash.DIRECTORY_SEPARATOR.$upload->name)."'><img src='".url("files/".$upload->hash.DIRECTORY_SEPARATOR.$upload->name)."' ><i title='Remove File' class='fa fa-times'></i></a>";
 					} else {
 						$out .= "<a class='btn btn-default btn_upload_file' file_type='file' selecter='".$field_name."'>Upload <i class='fa fa-cloud-upload'></i></a>
 							<a class='uploaded_file hide' target='_blank'><i class='fa fa-file-o'></i><i title='Remove File' class='fa fa-times'></i></a>";
@@ -637,7 +637,7 @@ class LvFormMaker
 	}
 	
 	/**
-	* Display field using blade directive @la_display
+	* Display field using blade directive @lv_display
 	**/
 	public static function display($module, $field_name, $class = 'form-control')
 	{
@@ -662,7 +662,7 @@ class LvFormMaker
 			switch ($field_type->name) {
 				case 'Address':
 					if($value != "") {
-						$value = $value.'<a target="_blank" class="pull-right btn btn-xs btn-primary btn-circle" href="http://maps.google.com/?q='.$value.'" data-toggle="tooltip" data-placement="left" title="Check location on Map"><i class="fa fa-map-marker"></i></a>';
+						$value = $value.'<a target="_blank" class="pull-right btn btn-lg btn-primary btn-circle" href="http://maps.google.com/?q='.$value.'" data-toggle="tooltip" data-placement="left" title="Check location on Map"><i class="fa fa-map-marker"></i></a>';
 					}
 					break;
 				case 'Checkbox':
@@ -709,7 +709,7 @@ class LvFormMaker
 						$upload = \App\Models\Upload::find($value);
 						if(isset($upload->id)) {
 							$value = '<a class="preview" target="_blank" href="'.url("files/".$upload->hash.DIRECTORY_SEPARATOR.$upload->name).'">
-							<span class="fa-stack fa-lg"><i class="fa fa-square fa-stack-2x"></i><i class="fa fa-file-o fa-stack-1x fa-inverse"></i></span> '.$upload->name.'</a>';
+							 <img src="'.url("files/".$upload->hash.DIRECTORY_SEPARATOR.$upload->name).'" ></a>';
 						} else {
 							$value = 'Uplaoded file not found.';
 						}
@@ -844,7 +844,7 @@ class LvFormMaker
 	}
 	
 	/**
-	* Print form using blade directive @la_form
+	* Print form using blade directive @lv_form
 	**/
 	public static function form($module, $fields = [])
 	{

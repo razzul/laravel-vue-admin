@@ -288,13 +288,64 @@ class LvHelper
 		if($active) {
 			$active_str = 'class="active"';
 		}
-		
-		$str = '<li'.$treeview.' '.$active_str.'><a href="'.url(config("LaravelVueAdmin.adminRoute") . '/' . $menu->url ) .'"><i class="fa '.$menu->icon.'"></i> <span>'.LvHelper::real_module_name($menu->name).'</span> '.$subviewSign.'</a>';
+		//'.LvHelper::real_module_name($menu->name).'
+		$str = '<li>';
+		if($menu->type != 'custom') {
+			$str .= '
+			<a href="'.url(config("LaravelVueAdmin.adminRoute") . '/' . $menu->url ) .'">
+				<span class="fa '.$menu->icon.'"></span>
+			</a>';	
+		} else if($menu->url == '#') {
+			$str .= '
+			<a href="'.url(config("LaravelVueAdmin.adminRoute") . '/' . $childrens[0]->url ) .'">
+				<span class="fa '.$menu->icon.'"></span>
+			</a>';
+		} else {
+			$str .= '
+			<a href="'.url( $menu->url ) .'" target="_blank">
+				<span class="fa '.$menu->icon.'"></span>
+			</a>';
+		}
 		
 		if(count($childrens)) {
-			$str .= '<ul class="treeview-menu">';
+			$str .= '<ul class="nested-dropdown animated fadeIn">';
+			$str .= '<li class="sidemenu-header">'.LvHelper::real_module_name($menu->name).'</li>';
 			foreach($childrens as $children) {
-				$str .= LvHelper::print_menu($children);
+				if(!empty($children->id)) {
+					if($children->type != 'custom') {
+						$str .= '
+						<li>
+							<a href="'.url(config("LaravelVueAdmin.adminRoute") . '/' . $children->url ) .'">
+								'.LvHelper::real_module_name($children->name).'
+							</a>
+						</li>';
+					} else {
+						$str .= '
+						<li>
+							<a href="'.url( $children->url ) .'" target="_blank">
+								'.LvHelper::real_module_name($children->name).'
+							</a>
+						</li>';
+					}
+				}
+			}
+			$str .= '</ul>';
+		} else {
+			$str .= '<ul class="nested-dropdown animated fadeIn">';
+			if($menu->type != 'custom') {
+				$str .= '
+				<li>
+					<a href="'.url(config("LaravelVueAdmin.adminRoute") . '/' . $menu->url ) .'">
+						'.LvHelper::real_module_name($menu->name).'
+					</a>
+				</li>';
+			} else {
+				$str .= '
+				<li>
+					<a href="'.url( $menu->url ) .'" target="_blank">
+						'.LvHelper::real_module_name($menu->name).'
+					</a>
+				</li>';
 			}
 			$str .= '</ul>';
 		}

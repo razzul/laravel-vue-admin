@@ -20,98 +20,103 @@
 		</ul>
 	</div>
 @endif
-<form action="{{route(config('LaravelVueAdmin.adminRoute').'.configs.store')}}" method="POST">
-	<!-- general form elements disabled -->
-	<div class="box box-warning">
-		<div class="box-header with-border">
-			<h3 class="box-title">GUI Settings</h3>
-		</div>
-		<!-- /.box-header -->
-		<div class="box-body">
+
+<div class="panel panel-info">
+	<div class="panel-heading">
+		<h3 class="panel-title">GUI Settings
+			<div class="panel-control pull-right">
+				<a class="panelButton"><i class="fa fa-refresh"></i></a>
+				<a class="panelButton"><i class="fa fa-minus"></i></a>
+				<a class="panelButton"><i class="fa fa-remove"></i></a>
+			</div>
+		</h3>
+	</div>
+	<div class="panel-body">
+		<form action="{{route(config('LaravelVueAdmin.adminRoute').'.configs.store')}}" method="POST">
 			{{ csrf_field() }}
-			<!-- text input -->
 			<div class="form-group">
-				<label>Sitename</label>
-				<input type="text" class="form-control" placeholder="Lara" name="sitename" value="{{$configs->sitename}}">
+				<label for="sitename" class="">Sitename</label>
+				<input type="text" class="form-control underline" id="sitename" placeholder="Lara" name="sitename" value="{{$configs->sitename}}">
 			</div>
 			<div class="form-group">
-				<label>Sitename First Word</label>
-				<input type="text" class="form-control" placeholder="Lara" name="sitename_part1" value="{{$configs->sitename_part1}}">
+				<label for="sitename_part1" class="">Sitename First Word</label>
+				<input type="text" class="form-control underline" id="sitename_part1" placeholder="Lara" name="sitename_part1" value="{{$configs->sitename_part1}}">
 			</div>
 			<div class="form-group">
-				<label>Sitename Second Word</label>
-				<input type="text" class="form-control" placeholder="Admin 1.0" name="sitename_part2" value="{{$configs->sitename_part2}}">
+				<label for="sitename_part2" class="">Sitename Second Word</label>
+				<input type="text" class="form-control underline" id="sitename_part2" placeholder="Admin 1.0" name="sitename_part2" value="{{$configs->sitename_part2}}">
 			</div>
 			<div class="form-group">
-				<label>Sitename Short (2/3 Characters)</label>
-				<input type="text" class="form-control" placeholder="LA" maxlength="2" name="sitename_short" value="{{$configs->sitename_short}}">
+				<label for="sitename_short" class="">Sitename Short (2/3 Characters)</label>
+				<input type="text" class="form-control underline" id="sitename_short" placeholder="LA" maxlength="2" name="sitename_short" value="{{$configs->sitename_short}}">
 			</div>
 			<div class="form-group">
-				<label>Site Description</label>
-				<input type="text" class="form-control" placeholder="Description in 140 Characters" maxlength="140" name="site_description" value="{{$configs->site_description}}">
+				<label for="sitename_short" class="">Site Description</label>
+				<input type="text" class="form-control underline" id="sitename_short" placeholder="Description in 140 Characters" maxlength="140" name="site_description" value="{{$configs->site_description}}">
 			</div>
-			<!-- checkbox -->
 			<div class="form-group">
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" name="sidebar_search" @if($configs->sidebar_search) checked @endif>
-						Show Search Bar
-					</label>
-				</div>
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" name="show_messages" @if($configs->show_messages) checked @endif>
-						Show Messages Icon
-					</label>
-				</div>
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" name="show_notifications" @if($configs->show_notifications) checked @endif>
-						Show Notifications Icon
-					</label>
-				</div>
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" name="show_tasks" @if($configs->show_tasks) checked @endif>
-						Show Tasks Icon
-					</label>
-				</div>
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" name="show_rightsidebar" @if($configs->show_rightsidebar) checked @endif>
-						Show Right SideBar Icon
-					</label>
-				</div>
+				<label class="checkbox1" for="sidebar_search">
+					<input type="checkbox" id="sidebar_search" name="sidebar_search" @if($configs->sidebar_search) checked @endif>
+					<span></span>		
+				</label>
+				<label for="sidebar_search" class="">Show Search Bar</label>
 			</div>
-			<!-- select -->
 			<div class="form-group">
-				<label>Skin Color</label>
-				<select class="form-control" name="skin">
+				<label class="checkbox1" for="show_messages">
+					<input type="checkbox" id="show_messages" name="show_messages" @if($configs->show_messages) checked @endif>
+					<span></span>
+				</label>
+				<label for="show_messages" class="">Show Messages Icon</label>
+			</div>
+			<div class="form-group">
+				<label class="checkbox1" for="show_notifications">
+					<input type="checkbox" id="show_notifications" name="show_notifications" @if($configs->show_notifications) checked @endif>
+					<span></span>
+				</label>
+				<label for="show_notifications" class="">Show Notifications Icon</label>
+			</div>
+			<div class="form-group">
+				<label class="checkbox1" for="show_tasks">
+					<input type="checkbox" id="show_tasks" name="show_tasks" @if($configs->show_tasks) checked @endif>
+					<span></span>		
+				</label>
+				<label for="show_tasks" class="">Show Tasks Icon</label>
+			</div>
+			<div class="form-group">
+				<label class="checkbox1" for="show_rightsidebar">
+					<input type="checkbox" id="show_rightsidebar" name="show_rightsidebar" @if($configs->show_rightsidebar) checked @endif>
+					<span></span>
+				</label>
+				<label for="show_rightsidebar" class="">Show Right SideBar Icon</label>
+			</div>
+			<div class="form-group">
+				<label for="skin" class="">Skin Color</label>
+				<select class="form-control" id="skin" name="skin">
 					@foreach($skins as $name=>$property)
 						<option value="{{ $property }}" @if($configs->skin == $property) selected @endif>{{ $name }}</option>
 					@endforeach
 				</select>
 			</div>
-			
 			<div class="form-group">
-				<label>Layout</label>
+				<label for="layout" class="">Layout</label>
 				<select class="form-control" name="layout">
 					@foreach($layouts as $name=>$property)
 						<option value="{{ $property }}" @if($configs->layout == $property) selected @endif>{{ $name }}</option>
 					@endforeach
 				</select>
 			</div>
-
 			<div class="form-group">
-				<label>Default Email Address</label>
-				<input type="text" class="form-control" placeholder="To send emails to others via SMTP" maxlength="100" name="default_email" value="{{$configs->default_email}}">
+				<label for="default_email" class="">Default Email Address</label>
+				<input type="text" class="form-control underline" id="default_email" placeholder="To send emails to others via SMTP" maxlength="100" name="default_email" value="{{$configs->default_email}}">
 			</div>
-		</div><!-- /.box-body -->
-		<div class="box-footer">
-			<button type="submit" class="btn btn-primary">Save</button>
-		</div><!-- /.box-footer -->
-	</div><!-- /.box -->
-</form>
+			<div class="form-group">
+				<div class="">
+					<button type="submit" class="btn btn-primary">Save</button>
+				</div>
+			</div><!-- /.box-footer -->
+		</form>
+	</div>
+</div>
 
 @endsection
 

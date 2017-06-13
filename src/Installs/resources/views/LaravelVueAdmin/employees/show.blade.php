@@ -8,18 +8,16 @@
 @section('main-content')
 <div id="page-content" class="profile2">
 	<div class="bg-success clearfix">
-		<div class="col-md-4">
+		<div class="col-md-5">
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-2">
 					<img class="profile-image" src="{{ Gravatar::fallback(asset('/img/avatar5.png'))->get(Auth::user()->email, ['size'=>400]) }}" alt="">
 				</div>
-				<div class="col-md-9">
+				<div class="col-md-10">
 					<h4 class="name">{{ $employee->$view_col }}</h4>
 					<div class="row stats">
 						<div class="col-md-6 stat"><div class="label2" data-toggle="tooltip" data-placement="top" title="Designation">{{ $employee->designation }}</div></div>
-						<div class="col-md-6 stat"><i class="fa fa-map-marker"></i> {{ $employee->city or "NA" }}</div>
 					</div>
-					<p class="desc">{{ substr($employee->about, 0, 33) }}@if(strlen($employee->about) > 33)...@endif</p>
 				</div>
 			</div>
 		</div>
@@ -28,19 +26,9 @@
 			<div class="dats1"><i class="fa fa-phone"></i> {{ $employee->mobile }}</div>
 			<div class="dats1"><i class="fa fa-clock-o"></i> Joined on {{ date("M d, Y", strtotime($employee->date_hire)) }}</div>
 		</div>
-		<div class="col-md-4">
+		<div class="col-md-3">
 			<div class="teamview">
-				<a class="face" data-toggle="tooltip" data-placement="top" title="John Doe"><img src="{{ asset('LaravelVueAdmin/assets/img/user1-128x128.jpg') }}" alt=""><i class="status-online"></i></a>
-				<a class="face" data-toggle="tooltip" data-placement="top" title="John Doe"><img src="{{ asset('LaravelVueAdmin/assets/img/user2-160x160.jpg') }}" alt=""></a>
-				<a class="face" data-toggle="tooltip" data-placement="top" title="John Doe"><img src="{{ asset('LaravelVueAdmin/assets/img/user3-128x128.jpg') }}" alt=""></a>
-				<a class="face" data-toggle="tooltip" data-placement="top" title="John Doe"><img src="{{ asset('LaravelVueAdmin/assets/img/user4-128x128.jpg') }}" alt=""><i class="status-online"></i></a>
-				<a class="face" data-toggle="tooltip" data-placement="top" title="John Doe"><img src="{{ asset('LaravelVueAdmin/assets/img/user5-128x128.jpg') }}" alt=""></a>
-				<a class="face" data-toggle="tooltip" data-placement="top" title="John Doe"><img src="{{ asset('LaravelVueAdmin/assets/img/user6-128x128.jpg') }}" alt=""></a>
-				<a class="face" data-toggle="tooltip" data-placement="top" title="John Doe"><img src="{{ asset('LaravelVueAdmin/assets/img/user7-128x128.jpg') }}" alt=""></a>
-				<a class="face" data-toggle="tooltip" data-placement="top" title="John Doe"><img src="{{ asset('LaravelVueAdmin/assets/img/user8-128x128.jpg') }}" alt=""></a>
-				<a class="face" data-toggle="tooltip" data-placement="top" title="John Doe"><img src="{{ asset('LaravelVueAdmin/assets/img/user5-128x128.jpg') }}" alt=""></a>
-				<a class="face" data-toggle="tooltip" data-placement="top" title="John Doe"><img src="{{ asset('LaravelVueAdmin/assets/img/user6-128x128.jpg') }}" alt=""><i class="status-online"></i></a>
-				<a class="face" data-toggle="tooltip" data-placement="top" title="John Doe"><img src="{{ asset('LaravelVueAdmin/assets/img/user7-128x128.jpg') }}" alt=""></a>
+				
 			</div>
 			
 		</div>
@@ -210,16 +198,12 @@
 								<p class="alert {{ Session::get('alert-class', 'alert-success') }}">{{ Session::get('success_message') }}</p>
 							@endif
 							<div class="form-group">
-								<label for="password" class=" col-md-2">Password</label>
-								<div class=" col-md-10">
-									<input type="password" name="password" value="" id="password" class="form-control" placeholder="Password" autocomplete="off" required="required" data-rule-minlength="6" data-msg-minlength="Please enter at least 6 characters.">
-								</div>
+								<label for="password" class="">Password</label>
+								<input type="password" class="form-control underline" id="password" name="password" value="" placeholder="Password" autocomplete="off" required="required" data-rule-minlength="6" data-msg-minlength="Please enter at least 6 characters.">
 							</div>
 							<div class="form-group">
 								<label for="password_confirmation" class=" col-md-2">Retype password</label>
-								<div class=" col-md-10">
-									<input type="password" name="password_confirmation" value="" id="password_confirmation" class="form-control" placeholder="Retype password" autocomplete="off" required="required" data-rule-equalto="#password" data-msg-equalto="Please enter the same value again.">
-								</div>
+								<input type="password" class="form-control underline" id="password_confirmation" name="password_confirmation" value="" placeholder="Retype password" autocomplete="off" required="required" data-rule-equalto="#password" data-msg-equalto="Please enter the same value again.">
 							</div>
 						</div>
 						<div class="panel-footer">

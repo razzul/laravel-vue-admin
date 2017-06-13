@@ -8,7 +8,7 @@
 
 @section("headerElems")
 @lv_access("Backups", "create")
-	<button class="btn btn-success btn-sm pull-right" id="CreateBackup">Create Backup</button>
+	<button class="btn btn-success btn-sm" id="CreateBackup">Create Backup</button>
 @endlv_access
 @endsection
 
@@ -24,12 +24,12 @@
     </div>
 @endif
 
-<div class="box box-success">
+<div class="box box-info">
 	<!--<div class="box-header"></div>-->
 	<div class="box-body">
 		<table id="example1" class="table table-bordered">
 		<thead>
-		<tr class="success">
+		<tr class="info">
 			@foreach( $listing_cols as $col )
 			<th>{{ $module->fields[$col]['label'] or ucfirst($col) }}</th>
 			@endforeach

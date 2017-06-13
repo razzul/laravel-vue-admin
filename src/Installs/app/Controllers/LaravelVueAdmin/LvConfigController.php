@@ -13,13 +13,13 @@ use Razzul\LaravelVueAdmin\Models\LvConfigs;
 class LvConfigController extends Controller
 {
 	var $skin_array = [
-		'White Skin' => 'skin-white',
-		'Blue Skin' => 'skin-blue',
-		'Black Skin' => 'skin-black',
-		'Purple Skin' => 'skin-purple',
-		'Yellow Sking' => 'skin-yellow',
-		'Red Skin' => 'skin-red',
-		'Green Skin' => 'skin-green'
+		'White Skin' => 'white',
+		'Blue Skin' => 'blue',
+		'Black Skin' => 'black',
+		'Purple Skin' => 'purple',
+		'Yellow Sking' => 'yellow',
+		'Red Skin' => 'red',
+		'Green Skin' => 'green'
 	];
 
 	var $layout_array = [

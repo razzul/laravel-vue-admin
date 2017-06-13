@@ -8,7 +8,7 @@
 
 @section("headerElems")
 @lv_access("Roles", "create")
-	<button class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#AddModal">Add Role</button>
+	<button class="btn btn-success btn-sm" data-toggle="modal" data-target="#AddModal">Add Role</button>
 @endlv_access
 @endsection
 
@@ -24,12 +24,12 @@
     </div>
 @endif
 
-<div class="box box-success">
+<div class="box box-info">
 	<!--<div class="box-header"></div>-->
 	<div class="box-body">
 		<table id="example1" class="table table-bordered">
 		<thead>
-		<tr class="success">
+		<tr class="info">
 			@foreach( $listing_cols as $col )
 			<th>{{ $module->fields[$col]['label'] or ucfirst($col) }}</th>
 			@endforeach

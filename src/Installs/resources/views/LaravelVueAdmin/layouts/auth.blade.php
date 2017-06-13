@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 @include('LaravelVueAdmin.layouts.partials.htmlheader')
 

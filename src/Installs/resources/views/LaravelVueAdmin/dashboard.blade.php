@@ -6,487 +6,295 @@
 
 @section('main-content')
 <!-- Main content -->
-        <section class="content">
-          <!-- Small boxes (Stat box) -->
-          <div class="row">
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-aqua">
-                <div class="inner">
-                  <h3>150</h3>
-                  <p>New Orders</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-bag"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-green">
-                <div class="inner">
-                  <h3>53<sup style="font-size: 20px">%</sup></h3>
-                  <p>Bounce Rate</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-stats-bars"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-yellow">
-                <div class="inner">
-                  <h3>44</h3>
-                  <p>User Registrations</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-person-add"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div><!-- ./col -->
-            <div class="col-lg-3 col-xs-6">
-              <!-- small box -->
-              <div class="small-box bg-red">
-                <div class="inner">
-                  <h3>65</h3>
-                  <p>Unique Visitors</p>
-                </div>
-                <div class="icon">
-                  <i class="ion ion-pie-graph"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-              </div>
-            </div><!-- ./col -->
-          </div><!-- /.row -->
-          <!-- Main row -->
-          <div class="row">
-            <!-- Left col -->
-            <section class="col-lg-7 connectedSortable">
-              <!-- Custom tabs (Charts with tabs)-->
-              <div class="nav-tabs-custom">
-                <!-- Tabs within a box -->
-                <ul class="nav nav-tabs pull-right">
-                  <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
-                  <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
-                  <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
-                </ul>
-                <div class="tab-content no-padding">
-                  <!-- Morris chart - Sales -->
-                  <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-                  <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
-                </div>
-              </div><!-- /.nav-tabs-custom -->
-
-              <!-- Chat box -->
-              <div class="box box-success">
-                <div class="box-header">
-                  <i class="fa fa-comments-o"></i>
-                  <h3 class="box-title">Chat</h3>
-                  <div class="box-tools pull-right" data-toggle="tooltip" title="Status">
-                    <div class="btn-group" data-toggle="btn-toggle" >
-                      <button type="button" class="btn btn-default btn-sm active"><i class="fa fa-square text-green"></i></button>
-                      <button type="button" class="btn btn-default btn-sm"><i class="fa fa-square text-red"></i></button>
-                    </div>
-                  </div>
-                </div>
-                <div class="box-body chat" id="chat-box">
-                  <!-- chat item -->
-                  <div class="item">
-                    <img src="{{asset('/LaravelVueAdmin/assets/img/user4-128x128.jpg')}}" alt="user image" class="online">
-                    <p class="message">
-                      <a href="#" class="name">
-                        <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 2:15</small>
-                        Mike Doe
-                      </a>
-                      I would like to meet you to discuss the latest news about
-                      the arrival of the new theme. They say it is going to be one the
-                      best themes on the market
-                    </p>
-                    <div class="attachment">
-                      <h4>Attachments:</h4>
-                      <p class="filename">
-                        Theme-thumbnail-image.jpg
-                      </p>
-                      <div class="pull-right">
-                        <button class="btn btn-primary btn-sm btn-flat">Open</button>
-                      </div>
-                    </div><!-- /.attachment -->
-                  </div><!-- /.item -->
-                  <!-- chat item -->
-                  <div class="item">
-                    <img src="{{asset('/LaravelVueAdmin/assets/img/user3-128x128.jpg')}}" alt="user image" class="offline">
-                    <p class="message">
-                      <a href="#" class="name">
-                        <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:15</small>
-                        Alexander Pierce
-                      </a>
-                      I would like to meet you to discuss the latest news about
-                      the arrival of the new theme. They say it is going to be one the
-                      best themes on the market
-                    </p>
-                  </div><!-- /.item -->
-                  <!-- chat item -->
-                  <div class="item">
-                    <img src="{{asset('/LaravelVueAdmin/assets/img/user2-160x160.jpg')}}" alt="user image" class="offline">
-                    <p class="message">
-                      <a href="#" class="name">
-                        <small class="text-muted pull-right"><i class="fa fa-clock-o"></i> 5:30</small>
-                        Susan Doe
-                      </a>
-                      I would like to meet you to discuss the latest news about
-                      the arrival of the new theme. They say it is going to be one the
-                      best themes on the market
-                    </p>
-                  </div><!-- /.item -->
-                </div><!-- /.chat -->
-                <div class="box-footer">
-                  <div class="input-group">
-                    <input class="form-control" placeholder="Type message...">
-                    <div class="input-group-btn">
-                      <button class="btn btn-success"><i class="fa fa-plus"></i></button>
-                    </div>
-                  </div>
-                </div>
-              </div><!-- /.box (chat box) -->
-
-              <!-- TO DO List -->
-              <div class="box box-primary">
-                <div class="box-header">
-                  <i class="ion ion-clipboard"></i>
-                  <h3 class="box-title">To Do List</h3>
-                  <div class="box-tools pull-right">
-                    <ul class="pagination pagination-sm inline">
-                      <li><a href="#">&laquo;</a></li>
-                      <li><a href="#">1</a></li>
-                      <li><a href="#">2</a></li>
-                      <li><a href="#">3</a></li>
-                      <li><a href="#">&raquo;</a></li>
-                    </ul>
-                  </div>
-                </div><!-- /.box-header -->
-                <div class="box-body">
-                  <ul class="todo-list">
-                    <li>
-                      <!-- drag handle -->
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <!-- checkbox -->
-                      <input type="checkbox" value="" name="">
-                      <!-- todo text -->
-                      <span class="text">Design a nice theme</span>
-                      <!-- Emphasis label -->
-                      <small class="label label-danger"><i class="fa fa-clock-o"></i> 2 mins</small>
-                      <!-- General tools such as edit or delete-->
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name="">
-                      <span class="text">Make the theme responsive</span>
-                      <small class="label label-info"><i class="fa fa-clock-o"></i> 4 hours</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name="">
-                      <span class="text">Let theme shine like a star</span>
-                      <small class="label label-warning"><i class="fa fa-clock-o"></i> 1 day</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name="">
-                      <span class="text">Let theme shine like a star</span>
-                      <small class="label label-success"><i class="fa fa-clock-o"></i> 3 days</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name="">
-                      <span class="text">Check your messages and notifications</span>
-                      <small class="label label-primary"><i class="fa fa-clock-o"></i> 1 week</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                    <li>
-                      <span class="handle">
-                        <i class="fa fa-ellipsis-v"></i>
-                        <i class="fa fa-ellipsis-v"></i>
-                      </span>
-                      <input type="checkbox" value="" name="">
-                      <span class="text">Let theme shine like a star</span>
-                      <small class="label label-default"><i class="fa fa-clock-o"></i> 1 month</small>
-                      <div class="tools">
-                        <i class="fa fa-edit"></i>
-                        <i class="fa fa-trash-o"></i>
-                      </div>
-                    </li>
-                  </ul>
-                </div><!-- /.box-body -->
-                <div class="box-footer clearfix no-border">
-                  <button class="btn btn-default pull-right"><i class="fa fa-plus"></i> Add item</button>
-                </div>
-              </div><!-- /.box -->
-
-              <!-- quick email widget -->
-              <div class="box box-info">
-                <div class="box-header">
-                  <i class="fa fa-envelope"></i>
-                  <h3 class="box-title">Quick Email</h3>
-                  <!-- tools box -->
-                  <div class="pull-right box-tools">
-                    <button class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="Remove"><i class="fa fa-times"></i></button>
-                  </div><!-- /. tools -->
-                </div>
-                <div class="box-body">
-                  <form action="#" method="post">
-                    <div class="form-group">
-                      <input type="email" class="form-control" name="emailto" placeholder="Email to:">
-                    </div>
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="subject" placeholder="Subject">
-                    </div>
-                    <div>
-                      <textarea class="textarea" placeholder="Message" style="width: 100%; height: 125px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-                    </div>
-                  </form>
-                </div>
-                <div class="box-footer clearfix">
-                  <button class="pull-right btn btn-default" id="sendEmail">Send <i class="fa fa-arrow-circle-right"></i></button>
-                </div>
-              </div>
-
-            </section><!-- /.Left col -->
-            <!-- right col (We are only adding the ID to make the widgets sortable)-->
-            <section class="col-lg-5 connectedSortable">
-
-              <!-- Map box -->
-              <div class="box box-solid bg-light-blue-gradient">
-                <div class="box-header">
-                  <!-- tools box -->
-                  <div class="pull-right box-tools">
-                    <button class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range"><i class="fa fa-calendar"></i></button>
-                    <button class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;"><i class="fa fa-minus"></i></button>
-                  </div><!-- /. tools -->
-
-                  <i class="fa fa-map-marker"></i>
-                  <h3 class="box-title">
-                    Visitors
-                  </h3>
-                </div>
-                <div class="box-body">
-                  <div id="world-map" style="height: 250px; width: 100%;"></div>
-                </div><!-- /.box-body-->
-                <div class="box-footer no-border">
-                  <div class="row">
-                    <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                      <div id="sparkline-1"></div>
-                      <div class="knob-label">Visitors</div>
-                    </div><!-- ./col -->
-                    <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                      <div id="sparkline-2"></div>
-                      <div class="knob-label">Online</div>
-                    </div><!-- ./col -->
-                    <div class="col-xs-4 text-center">
-                      <div id="sparkline-3"></div>
-                      <div class="knob-label">Exists</div>
-                    </div><!-- ./col -->
-                  </div><!-- /.row -->
-                </div>
-              </div>
-              <!-- /.box -->
-
-              <!-- solid sales graph -->
-              <div class="box box-solid bg-teal-gradient">
-                <div class="box-header">
-                  <i class="fa fa-th"></i>
-                  <h3 class="box-title">Sales Graph</h3>
-                  <div class="box-tools pull-right">
-                    <button class="btn bg-teal btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn bg-teal btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div>
-                </div>
-                <div class="box-body border-radius-none">
-                  <div class="chart" id="line-chart" style="height: 250px;"></div>
-                </div><!-- /.box-body -->
-                <div class="box-footer no-border">
-                  <div class="row">
-                    <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                      <input type="text" class="knob" data-readonly="true" value="20" data-width="60" data-height="60" data-fgColor="#39CCCC">
-                      <div class="knob-label">Mail-Orders</div>
-                    </div><!-- ./col -->
-                    <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                      <input type="text" class="knob" data-readonly="true" value="50" data-width="60" data-height="60" data-fgColor="#39CCCC">
-                      <div class="knob-label">Online</div>
-                    </div><!-- ./col -->
-                    <div class="col-xs-4 text-center">
-                      <input type="text" class="knob" data-readonly="true" value="30" data-width="60" data-height="60" data-fgColor="#39CCCC">
-                      <div class="knob-label">In-Store</div>
-                    </div><!-- ./col -->
-                  </div><!-- /.row -->
-                </div><!-- /.box-footer -->
-              </div><!-- /.box -->
-
-              <!-- Calendar -->
-              <div class="box box-solid bg-green-gradient">
-                <div class="box-header">
-                  <i class="fa fa-calendar"></i>
-                  <h3 class="box-title">Calendar</h3>
-                  <!-- tools box -->
-                  <div class="pull-right box-tools">
-                    <!-- button with a dropdown -->
-                    <div class="btn-group">
-                      <button class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bars"></i></button>
-                      <ul class="dropdown-menu pull-right" role="menu">
-                        <li><a href="#">Add new event</a></li>
-                        <li><a href="#">Clear events</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">View calendar</a></li>
-                      </ul>
-                    </div>
-                    <button class="btn btn-success btn-sm" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    <button class="btn btn-success btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>
-                  </div><!-- /. tools -->
-                </div><!-- /.box-header -->
-                <div class="box-body no-padding">
-                  <!--The calendar -->
-                  <div id="calendar" style="width: 100%"></div>
-                </div><!-- /.box-body -->
-                <div class="box-footer text-black">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <!-- Progress bars -->
-                      <div class="clearfix">
-                        <span class="pull-left">Task #1</span>
-                        <small class="pull-right">90%</small>
-                      </div>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-green" style="width: 90%;"></div>
-                      </div>
-
-                      <div class="clearfix">
-                        <span class="pull-left">Task #2</span>
-                        <small class="pull-right">70%</small>
-                      </div>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-green" style="width: 70%;"></div>
-                      </div>
-                    </div><!-- /.col -->
-                    <div class="col-sm-6">
-                      <div class="clearfix">
-                        <span class="pull-left">Task #3</span>
-                        <small class="pull-right">60%</small>
-                      </div>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-green" style="width: 60%;"></div>
-                      </div>
-
-                      <div class="clearfix">
-                        <span class="pull-left">Task #4</span>
-                        <small class="pull-right">40%</small>
-                      </div>
-                      <div class="progress xs">
-                        <div class="progress-bar progress-bar-green" style="width: 40%;"></div>
-                      </div>
-                    </div><!-- /.col -->
-                  </div><!-- /.row -->
-                </div>
-              </div><!-- /.box -->
-
-            </section><!-- right col -->
-          </div><!-- /.row (main row) -->
-
-        </section><!-- /.content -->
+<div class="conter-wrapper home-container">
+  <div class="row home-row">
+    <div class="col-md-4 col-lg-3">
+      <div class="home-stats">
+        <a href="c3chart.html" class="stat hvr-wobble-horizontal">
+          <div class=" stat-icon">
+            <i class="fa fa-cloud-upload fa-4x text-info "></i>
+          </div>
+          <div class=" stat-label">
+            <div class="label-header">
+              88%
+            </div>
+            <div class="progress-sm progress ng-isolate-scope" value="progressValue" type="info">
+              <div class="progress-bar progress-bar-info" role="progressbar"
+              aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"  style="width: 88%;">
+            </div>
+          </div>  
+          <div class="clearfix stat-detail">  
+            <div class="label-body">
+              <i class="fa fa-arrow-circle-o-right pull-right text-muted"></i>Server Uptime
+            </div>
+          </div>
+        </div>
+      </a>          <a href="c3chart.html" class="stat hvr-wobble-horizontal">
+      <div class=" stat-icon">
+        <i class="fa fa-heartbeat fa-4x text-success "></i>
+      </div>
+      <div class=" stat-label">
+        <div class="label-header">
+          94%
+        </div>
+        <div class="progress-sm progress ng-isolate-scope" value="progressValue" type="info">
+          <div class="progress-bar progress-bar-success" role="progressbar"
+          aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"  style="width: 94%;">
+        </div>
+      </div>  
+      <div class="clearfix stat-detail">  
+        <div class="label-body">
+          <i class="fa fa-arrow-circle-o-right pull-right text-muted"></i>Positive feedback
+        </div>
+      </div>
+    </div>
+  </a>          <a href="inbox.html" class="stat hvr-wobble-horizontal">
+  <div class=" stat-icon">
+    <i class="fa fa-flag fa-4x text-danger "></i>
+  </div>
+  <div class=" stat-label">
+    <div class="label-header">
+      88%
+    </div>
+    <div class="progress-sm progress ng-isolate-scope" value="progressValue" type="info">
+      <div class="progress-bar progress-bar-danger" role="progressbar"
+      aria-valuenow="88" aria-valuemin="0" aria-valuemax="100"  style="width: 88%;">
+    </div>
+  </div>  
+  <div class="clearfix stat-detail">  
+    <div class="label-body">
+      <i class="fa fa-arrow-circle-o-right pull-right text-muted"></i>Posts flagged
+    </div>
+  </div>
+</div>
+</a>    
+</div>
+</div>
+<div class="col-md-4 col-lg-6">
+  <div class="home-charts-middle">
+    <div class="chart-container">
+      <div class="chart-comment clearfix">
+        <div class="text-primary pull-left">
+          <span class="comment-header">55%</span><br />
+          <span class="comment-comment">New User</span>
+        </div>
+        <div class="text-success pull-left m-l">
+          <span class="comment-header">25%</span><br />
+          <span class="comment-comment">Returning user</span>
+        </div>
+        <div class="text-warning pull-left m-l">
+          <span class="comment-header">20%</span><br />
+          <span class="comment-comment">Referral user</span>
+        </div>
+      </div>
+      <div id="lineChart" style="height:250px"></div>
+    </div>
+  </div>
+</div>
+<div class="col-md-4 col-lg-3">
+  <div class="home-charts-right">
+    <div class="top-right-chart">
+      <div id="cbar" style="height:150px; padding-top:7px;"></div>
+    </div>
+    <div class="bottom-right-chart">
+      <div class="top-left-chart clearfix">
+        <div class="row">
+          <div class="col-sm-6 text-left">
+            <div class="padder">
+              <span class="heading">Total Views : </span><br />
+              <big class="text-primary">22068</big>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div id="pie"  style="height:125px; padding-top:8px;"></div>
+          </div>
+        </div>
+      </div>  
+    </div>
+  </div>
+</div>
+</div>
+<div class="row home-row">
+  <div class="col-lg-8 col-md-6">
+    <div class="map-container box padder">
+      <div id="world-map" style="width: 100%; height: 320px"></div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6">
+    <div class="todo-container panel panel-danger">
+      <div class="panel-heading">
+        <div class="todo-header text-center">
+          <h4><i class="fa fa-tasks"></i>&nbsp;To do Tasks</h4>
+        </div>
+      </div>
+      <div class="panel-body bg-danger">
+        <div class="todo-body">
+          <div class="todo-list-wrap">
+            <ul class="todo-list">
+              <li class="">
+                <label class="checkbox1" for="option1"> 
+                  <input id="option1" type="checkbox" class="">
+                  <span></span>
+                </label>
+                <span class="done-false">Meeting with Nabindar Singh.</span>
+              </li>
+              <li class="">
+                <label class="checkbox1" for="option3"> 
+                  <input id="option3" type="checkbox" class="">
+                  <span></span>
+                </label>
+                <span class="done-false">Exercise at 6:pm with Nicholas.</span>
+              </li>
+              <li class="">
+                <label class="checkbox1" for="option4"> 
+                  <input id="option4" type="checkbox" class="">
+                  <span></span>
+                </label>
+                <span class="done-false">Avengers Age of Ultron.</span>
+              </li>
+              <li class="">
+                <label class="checkbox1" for="option5"> 
+                  <input id="option5" type="checkbox" class="">
+                  <span></span>
+                </label>
+                <span class="done-false">Henna birthday at Mezbaan.</span>
+              </li>
+              <li class="">
+                <label class="checkbox1" for="option2"> 
+                  <input id="option2" type="checkbox" class="">
+                  <span></span>
+                </label>
+                <span class="done-false">Black Magic</span>
+              </li>
+            </ul>
+          </div>
+          <form class="form-horizontal todo-from-bottom">
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit">Add</button>
+                  </span>
+                </div>  
+              </div>        
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 @endsection
 
 @push('styles')
-<!-- Morris chart -->
-<link rel="stylesheet" href="{{ asset('LaravelVueAdmin/assets/plugins/morris/morris.css') }}">
-<!-- jvectormap -->
-<link rel="stylesheet" href="{{ asset('LaravelVueAdmin/assets/plugins/jvectormap/jquery-jvectormap-1.2.2.css') }}">
-<!-- Date Picker -->
-<link rel="stylesheet" href="{{ asset('LaravelVueAdmin/assets/plugins/datepicker/datepicker3.css') }}">
-<!-- Daterange picker -->
-<link rel="stylesheet" href="{{ asset('LaravelVueAdmin/assets/plugins/daterangepicker/daterangepicker-bs3.css') }}">
-<!-- bootstrap wysihtml5 - text editor -->
-<link rel="stylesheet" href="{{ asset('LaravelVueAdmin/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
+
 @endpush
 
 
 @push('scripts')
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="{{ asset('LaravelVueAdmin/assets/plugins/morris/morris.min.js') }}"></script>
-<!-- Sparkline -->
-<script src="{{ asset('LaravelVueAdmin/assets/plugins/sparkline/jquery.sparkline.min.js') }}"></script>
-<!-- jvectormap -->
-<script src="{{ asset('LaravelVueAdmin/assets/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
-<script src="{{ asset('LaravelVueAdmin/assets/plugins/jvectormap/jquery-jvectormap-world-mill-en.js') }}"></script>
-<!-- jQuery Knob Chart -->
-<script src="{{ asset('LaravelVueAdmin/assets/plugins/knob/jquery.knob.js') }}"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="{{ asset('LaravelVueAdmin/assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
-<!-- datepicker -->
-<script src="{{ asset('LaravelVueAdmin/assets/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="{{ asset('LaravelVueAdmin/assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
-<!-- FastClick -->
-<script src="{{ asset('LaravelVueAdmin/assets/plugins/fastclick/fastclick.js') }}"></script>
-<!-- dashboard -->
-<script src="{{ asset('LaravelVueAdmin/assets/js/pages/dashboard.js') }}"></script>
-@endpush
+  $(function(){
+    setTimeout(function() {
+      var chart = c3.generate({
+        bindto: '#lineChart',
+        data: {
+          columns: [
+          ['Newuser', 30, 200, 100, 400, 150, 250],
+          ['Returning user', 50, 120, 210, 140, 115, 425],
+          ['Referral user', 40, 150, 98, 300, 175, 100]
+          ]
+        },
+        color: {
+          pattern: ['#3CA2E0','#5CB85C','#F1B35B']
+        },
+        axis: {
+          x: {
+            show: false
+          },
+          y: {
+            show: false
+          },
+        }
+      });
+    }, 275);
+    setTimeout(function() {
+      $('#world-map').vectorMap({
+        backgroundColor: '#FFF',
+        regionStyle: {
+          initial: {
+            fill: 'black',
+            "fill-opacity": 1,
+            stroke: 'none',
+            "stroke-width": 0,
+            "stroke-opacity": 1
+          },
+          hover: {
+            "fill-opacity": 0.8,
+            cursor: 'pointer',
+          },
+          selected: {
+            fill: 'red'
+          },
+          selectedHover: {
+          }
+}
+      });
+    }, 275);
+    setTimeout(function() {
+      var chart2 = c3.generate({
+        bindto: '#cbar',
+        data: {
+          columns: [
+          [10,40,20,90,35,70,10,50,20,80,60,10,20,40,70]
+          ],
+          type:'bar'
+        },
+        bar: {
+          width: {
+            ratio: 0.5 // this makes bar width 50% of length between ticks
+          }
+        },
+  color: {
+    pattern: ['#DB5B57']
+  },
+  labels: true,
+  legend: {
+    show: 0
+  },
+  axis: {
+    x: {
+      show: false
+    },
+    y: {
+      show: false
+    },
+  }
+  });
 
-@push('scripts')
-<script>
-(function($) {
-	$('body').pgNotification({
-		style: 'circle',
-		title: 'LaravelVueAdmin',
-		message: "Welcome to LaravelVueAdmin...",
-		position: "top-right",
-		timeout: 0,
-		type: "success",
-		thumbnail: '<img width="40" height="40" style="display: inline-block;" src="{{ Gravatar::fallback(asset('LaravelVueAdmin/assets/img/user2-160x160.jpg'))->get(Auth::user()->email, 'default') }}" data-src="assets/img/profiles/avatar.jpg" data-src-retina="assets/img/profiles/avatar2x.jpg" alt="">'
-	}).show();
-})(window.jQuery);
+    }, 275);
+    setTimeout(function() {
+        var chart = c3.generate({
+          bindto: '#pie',
+          data: {
+    // iris data from R
+    columns: [
+    ['data1', 11],
+    ['data2', 23],
+    ['data3', 66]
+    ],
+    type : 'pie',
+    },
+    color: {
+      pattern: ['#5CB85C','#F0AD4E','#3CA2E0']
+    },
+    legend: {
+      show: 0
+    },
+    });
+
+    }, 275);
+  });
 </script>
 @endpush
