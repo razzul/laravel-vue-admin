@@ -7,7 +7,7 @@
         "issues": "https://github.com/razzul/laravel-vue-admin/issues",
         "source": "https://github.com/razzul/laravel-vue-admin"
     },
-    "version": "1.2.0",
+    "version": "1.0.0",
     "require": {
         "laravelcollective/html": "5.*",
         "yajra/laravel-datatables-oracle": "^7.0",
@@ -35,5 +35,6 @@
         },
         "files": [
         ]
-    }
+    },
+    "minimum-stability": "dev"
 }
