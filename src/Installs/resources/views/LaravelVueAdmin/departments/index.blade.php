@@ -79,10 +79,21 @@
 
 @push('styles')
 <link rel="stylesheet" type="text/css" href="{{ asset('LaravelVueAdmin/assets/plugins/datatables/datatables.min.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('LaravelVueAdmin/assets/plugins/datatables/buttons-1.3.1/css/buttons.dataTables.min.css') }}"/>
+<style>
+	
+</style>
 @endpush
 
 @push('scripts')
 <script src="{{ asset('LaravelVueAdmin/assets/plugins/datatables/datatables.min.js') }}"></script>
+<script src="{{ asset('LaravelVueAdmin/assets/plugins/datatables/buttons-1.3.1/js/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('LaravelVueAdmin/assets/plugins/datatables/buttons-1.3.1/js/buttons.flash.min.js') }}"></script>
+<script src="{{ asset('LaravelVueAdmin/assets/plugins/datatables/buttons-1.3.1/jszip-3.1.3/jszip.min.js') }}"></script>
+<script src="{{ asset('LaravelVueAdmin/assets/plugins/datatables/buttons-1.3.1/pdfmake-0.1.27/build/pdfmake.min.js') }}"></script>
+<script src="{{ asset('LaravelVueAdmin/assets/plugins/datatables/buttons-1.3.1/pdfmake-0.1.27/build/vfs_fonts.js') }}"></script>
+<script src="{{ asset('LaravelVueAdmin/assets/plugins/datatables/buttons-1.3.1/js/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('LaravelVueAdmin/assets/plugins/datatables/buttons-1.3.1/js/buttons.print.min.js') }}"></script>
 <script>
 $(function () {
 	$("#example1").DataTable({
@@ -97,6 +108,12 @@ $(function () {
 		@if($show_actions)
 		columnDefs: [ { orderable: false, targets: [-1] }],
 		@endif
+		dom: "<'row'<'col-sm-6'l><'col-sm-6'Bf>>" +
+			 "<'row'<'col-sm-12'tr>>" +
+			 "<'row'<'col-sm-5'i><'col-sm-7'p>>",
+		buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
 	});
 	$("#department-add-form").validate({
 		
