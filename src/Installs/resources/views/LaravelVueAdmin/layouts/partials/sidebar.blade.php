@@ -38,7 +38,6 @@
                             <ul class="nested-dropdown animated fadeIn">
                                 <li class="sidemenu-header">Settings</li>
                                 <li><a href="{{ url(config('LaravelVueAdmin.adminRoute') . '/configs') }}">Configure</a></li>
-                                <li><a href="{{ url(config('LaravelVueAdmin.adminRoute') . '/lacodeeditor') }}">Editor</a></li>
                                 <li><a href="{{ url(config('LaravelVueAdmin.adminRoute') . '/modules') }}">Modules</a></li>
                                 <li><a href="{{ url(config('LaravelVueAdmin.adminRoute') . '/menus') }}">Menus</a></li>
                                 <li><a href="{{ url(config('LaravelVueAdmin.adminRoute') . '/backups') }}">Backups</a></li>
