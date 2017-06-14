@@ -9437,3 +9437,22 @@ body {
 .bg-light-blue, .label-primary, .modal-primary .modal-body {
   background: #27ae60 !important;
 }
+div.dt-buttons {
+  position: absolute !important;
+  top: -58px !important;
+  right: 110px !important;
+}
+.dt-button:hover {
+  background-color: #1e8449 !important;
+  border-color: #1e8449 !important;
+}
+.dt-button {
+  color: #fff !important;
+    background-color: #27ae60 !important;
+    border-color: #27ae60 !important;
+    background-image: none !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    border-radius: 0px !important;
+    border: 0px solid #27ae60 !important;
+}
