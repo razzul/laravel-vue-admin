@@ -12,6 +12,9 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 <style>
+img.topnav-img, .user-avatar{
+  border-radius: 50%;
+}
 .tr-access-adv table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable th:last-child, table.table-bordered.dataTable td:last-child, table.table-bordered.dataTable td:last-child{
   border-right-width: 1px !important;
 }
